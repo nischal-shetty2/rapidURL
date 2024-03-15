@@ -1,36 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# RapidUrl
 
-## Getting Started
+RapidUrl is a URL shortener website built using Next.js for both frontend and backend routing, with MongoDB as the database managed by Mongoose and hosted on Vercel.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Shorten long URLs into concise, easy-to-share links.
+- Efficient routing handled by Next.js for seamless user experience.
+- Secure storage and retrieval of URLs using MongoDB and Mongoose.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js**: Utilized for both frontend and backend routing, ensuring a smooth and responsive user experience.
+- **MongoDB**: A robust NoSQL database used for storing shortened URLs, providing scalability and flexibility.
+- **Mongoose**: An elegant MongoDB object modeling tool designed to work in an asynchronous environment, facilitating data manipulation and retrieval.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
