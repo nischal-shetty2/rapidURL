@@ -1,8 +1,9 @@
+import { NextRequest } from "next/server";
 import dbConnect from "../lib/dbConnect";
 import Url from "../models/UrlSchema";
-import { redirect } from "next/navigation";
 
-export const getdata = async (urlId: string) => {
+export async function GET(req: NextRequest) {
+  const urlId = req.url.split("?")[1];
   await dbConnect();
   try {
     const url = await Url.findOne({
@@ -15,9 +16,9 @@ export const getdata = async (urlId: string) => {
         },
         { $inc: { clicks: 1 } }
       );
-      return url.origUrl;
+      return Response.redirect(url.origUrl);
     } else Response.json({ status: 404, msg: "Not found" });
   } catch (err) {
     Response.json({ status: 404, msg: "Not found" });
   }
-};
+}

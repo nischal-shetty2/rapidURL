@@ -46,60 +46,62 @@ export const UrlInput = () => {
   return (
     <div>
       {error ? <ShowToast /> : null}
-      <div className="w-screen max-w-2xl hover:shadow-md hover:shadow-slate-300 bg-blend-darken rounded-lg ">
-        <form>
-          <label className="mb-2 text-sm font-medium sr-only text-white">
-            Search
-          </label>
-          <div className="relative">
-            <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-              <svg
-                className="w-4 h-4 text-gray-500"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 20 20">
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                />
-              </svg>
+      <div className="w-screen max-w-2xl 0 bg-blend-darken rounded-lg ">
+        <div className=" hover:shadow-md hover:shadow-gray-500 rounded-lg">
+          <form>
+            <label className="mb-2 text-sm font-medium sr-only text-white">
+              Search
+            </label>
+            <div className="relative">
+              <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                <svg
+                  className="w-4 h-4 text-gray-500"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 20 20">
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                  />
+                </svg>
+              </div>
+              <input
+                style={{ paddingRight: "2rem" }}
+                onChange={handleInputChange}
+                type="search"
+                id="search"
+                className="text-white block w-full p-4 ps-10 text-sm border rounded-lg bg-black border-gray-200 placeholder-gray-500  focus:ring-white focus:border-white appearance-none"
+                placeholder="Search"
+                required
+              />
+              {awaiting ? (
+                <Spinner />
+              ) : (
+                <button
+                  onClick={async (e) => {
+                    e.preventDefault();
+                    setAwaiting(true);
+                    const shortenedUrl = await handleOnclick(inputValue);
+                    if (shortenedUrl === inputValue) {
+                      seterror(true);
+                    } else {
+                      seterror(false);
+                      setOutputValue(shortenedUrl);
+                    }
+                    setAwaiting(false);
+                  }}
+                  type="submit"
+                  className="text-white absolute end-2.5 bottom-2.5 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 bg-black border border-gray-100 hover:border-gray-700 hover:text-gray-300">
+                  Shorten URL
+                </button>
+              )}
             </div>
-            <input
-              style={{ paddingRight: "2rem" }}
-              onChange={handleInputChange}
-              type="search"
-              id="search"
-              className="text-white block w-full p-4 ps-10 text-sm border rounded-lg bg-black border-gray-200 placeholder-gray-500  focus:ring-white focus:border-white appearance-none"
-              placeholder="Search"
-              required
-            />
-            {awaiting ? (
-              <Spinner />
-            ) : (
-              <button
-                onClick={async (e) => {
-                  e.preventDefault();
-                  setAwaiting(true);
-                  const shortenedUrl = await handleOnclick(inputValue);
-                  if (shortenedUrl === inputValue) {
-                    seterror(true);
-                  } else {
-                    seterror(false);
-                    setOutputValue(shortenedUrl);
-                  }
-                  setAwaiting(false);
-                }}
-                type="submit"
-                className="text-white absolute end-2.5 bottom-2.5 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 bg-black border border-gray-100 hover:border-gray-700 hover:text-gray-300">
-                Shorten URL
-              </button>
-            )}
-          </div>
-        </form>
+          </form>
+        </div>
         {outputValue === "" ? null : (
           <div className="border rounded-md mt-4">
             <DisplayLink />

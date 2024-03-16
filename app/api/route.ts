@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
     } else {
       const urlId = nanoid(3);
       const base = process.env.NEXT_PUBLIC_BASE;
-      const shortUrl = `${base}/r?u=${urlId}`;
+      const shortUrl = `${base}/r?${urlId}`;
       await Url.create({
         origUrl,
         urlId,
