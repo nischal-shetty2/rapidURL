@@ -11,8 +11,8 @@ export const Appbar = () => {
 
   return (
     <div>
-      <nav className=" bg-gray-900">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <nav className=" bg-black">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-5 py-3">
           <a
             href="#"
             className="flex items-center space-x-3 rtl:space-x-reverse">
@@ -46,12 +46,12 @@ export const Appbar = () => {
           <div
             className={`w-full ${isMenuOpen ? "" : "hidden"}`}
             id="navbar-hamburger">
-            <ul className="flex flex-col font-medium mt-4 rounded-lg bg-gray-900">
+            <ul className="flex flex-col font-medium mt-4 rounded-lg bg-zinc-900">
               <li>
                 <a
                   href="https://github.com/nischal-shetty2/rapidURL"
                   target="_blank"
-                  className="block py-2 px-3 text-gray-400 rounded hover:bg-gray-700 hover:text-white">
+                  className="block py-2 px-3 text-gray-400 rounded hover:bg-zinc-700 hover:text-white">
                   Github
                 </a>
               </li>
@@ -59,7 +59,7 @@ export const Appbar = () => {
                 <a
                   href="https://www.linkedin.com/in/nischal-shetty-2ba446272/"
                   target="_blank"
-                  className="block py-2 px-3 text-gray-400 rounded hover:bg-gray-700 hover:text-white">
+                  className="block py-2 px-3 text-gray-400 rounded hover:bg-zinc-700 hover:text-white">
                   Linkedin
                 </a>
               </li>
@@ -67,7 +67,7 @@ export const Appbar = () => {
                 <a
                   href="https://twitter.com/NischalShetty02"
                   target="_blank"
-                  className="block py-2 px-3 text-gray-400 rounded hover:bg-gray-700 hover:text-white">
+                  className="block py-2 px-3 text-gray-400 rounded hover:bg-zinc-700 hover:text-white">
                   Twitter
                 </a>
               </li>
@@ -75,7 +75,7 @@ export const Appbar = () => {
                 <a
                   href="https://linktr.ee/nischal.shetty"
                   target="_blank"
-                  className="block py-2 px-3 text-gray-400 rounded hover:bg-gray-700 hover:text-white">
+                  className="block py-2 px-3 text-gray-400 rounded hover:bg-zinc-700 hover:text-white">
                   LinkTree
                 </a>
               </li>

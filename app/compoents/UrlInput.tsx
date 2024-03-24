@@ -25,10 +25,10 @@ export const UrlInput = () => {
     };
 
     return (
-      <div className="text-white flex flex-col justify-center  pl-10 my-2">
+      <div className="text-white flex flex-col justify-center  pl-10 my-2 ">
         <div className="  flex justify-between">
           <a
-            className=" mt-2 hover:text-blue-500 text-orange-200"
+            className=" mt-2 hover:text-blue-500 text-blue-200"
             href={outputValue}>
             {outputValue}
           </a>
@@ -46,36 +46,19 @@ export const UrlInput = () => {
   return (
     <div>
       {error ? <ShowToast /> : null}
-      <div className="w-screen max-w-2xl 0 bg-blend-darken rounded-lg ">
+      <div className="w-screen max-w-2xl bg-blend-darken rounded-lg px-3">
         <div className=" hover:shadow-md hover:shadow-gray-500 rounded-lg">
           <form>
             <label className="mb-2 text-sm font-medium sr-only text-white">
               Search
             </label>
             <div className="relative">
-              <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                <svg
-                  className="w-4 h-4 text-gray-500"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 20 20">
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                  />
-                </svg>
-              </div>
               <input
-                style={{ paddingRight: "2rem" }}
                 onChange={handleInputChange}
                 type="search"
                 id="search"
-                className="text-white block w-full p-4 ps-10 text-sm border rounded-lg bg-black border-gray-200 placeholder-gray-500  focus:ring-white focus:border-white appearance-none"
-                placeholder="Search"
+                className="text-white block w-full p-4 pl-2 ps-10 text-sm border rounded-lg bg-black border-gray-800 placeholder-gray-500  focus:ring-white focus:border-white appearance-none"
+                placeholder="https://example.xyz.com"
                 required
               />
               {awaiting ? (
@@ -95,7 +78,7 @@ export const UrlInput = () => {
                     setAwaiting(false);
                   }}
                   type="submit"
-                  className="text-white absolute end-2.5 bottom-2.5 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 bg-black border border-gray-100 hover:border-gray-700 hover:text-gray-300">
+                  className="text-white absolute end-2.5 bottom-2.5 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 bg-black border border-gray-700 hover:border-gray-200 hover:text-blue-100">
                   Shorten URL
                 </button>
               )}
