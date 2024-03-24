@@ -1,4 +1,4 @@
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import dbConnect from "../lib/dbConnect";
 import Url from "../models/UrlSchema";
 
@@ -17,9 +17,9 @@ export async function GET(req: NextRequest) {
         },
         { $inc: { clicks: 1 } }
       );
-      return Response.redirect(url.origUrl);
-    } else Response.json({ status: 404, msg: "Not found" });
+      return NextResponse.redirect(url.origUrl);
+    } else return NextResponse.json({ status: 404, msg: "Not found" });
   } catch (err) {
-    Response.json({ status: 404, error: err });
+    return NextResponse.json({ status: 404, error: err });
   }
 }
