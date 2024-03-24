@@ -4,8 +4,8 @@ import Url from "../models/UrlSchema";
 
 export async function GET(req: NextRequest) {
   try {
-    console.log(req.url);
-    const urlId = req.url.split("?")[1];
+    const fullUrl = req.nextUrl.href;
+    const urlId = fullUrl.split("?")[1];
     await dbConnect();
     const url = await Url.findOne({
       urlId,
