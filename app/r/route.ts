@@ -19,7 +19,7 @@ export async function GET(req: NextRequest) {
       );
       return NextResponse.redirect(url.origUrl);
     } else {
-      return NextResponse.json({ status: 404, msg: "Not found" });
+      return NextResponse.json({ status: 404, msg: fullUrl });
     }
   } catch (err) {
     return NextResponse.json({ status: 404, error: err });
