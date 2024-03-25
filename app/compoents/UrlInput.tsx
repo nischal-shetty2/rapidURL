@@ -25,17 +25,17 @@ export const UrlInput = () => {
     };
 
     return (
-      <div className="text-white flex flex-col justify-center  pl-10 my-2 ">
-        <div className="  flex justify-between">
+      <div className="text-white flex flex-col justify-center pl-10 my-2 ">
+        <div className="flex justify-between">
           <a
-            className=" mt-2 hover:text-blue-500 text-blue-200"
+            className=" mt-2 hover:text-blue-500 ease-in-out duration-700 text-slate-400"
             href={outputValue}>
             {outputValue}
           </a>
           <button
             onClick={copyToClipboard}
             type="button"
-            className="  border  focus:outline-none focus:ring-4  font-medium rounded-lg text-sm px-5 py-2.5 mx-4 bg-gray-800 text-white border-gray-600 hover:bg-gray-700 hover:border-gray-600 focus:ring-gray-700">
+            className=" ease-in-out duration-500 border focus:outline-none focus:ring-4  font-medium rounded-lg text-sm px-5 py-2 mx-4 bg-black text-white border-gray-700 hover:bg-black hover:border-gray-200 focus:ring-gray-700">
             {copied ? "Copied!" : "Copy"}
           </button>
         </div>
@@ -46,8 +46,8 @@ export const UrlInput = () => {
   return (
     <div>
       {error ? <ShowToast /> : null}
-      <div className="w-screen max-w-2xl bg-blend-darken rounded-lg px-3">
-        <div className=" hover:shadow-md hover:shadow-gray-500 rounded-lg">
+      <div className="w-screen max-w-2xl bg-blend-darken rounded-lg px-3 mb-20">
+        <div className=" hover:shadow-md hover:shadow-purple-800 ease-in-out duration-500 rounded-xl">
           <form>
             <label className="mb-2 text-sm font-medium sr-only text-white">
               Search
@@ -57,7 +57,7 @@ export const UrlInput = () => {
                 onChange={handleInputChange}
                 type="search"
                 id="search"
-                className="text-white block w-full p-4 pl-2 ps-10 text-sm border rounded-lg bg-black border-gray-800 placeholder-gray-500  focus:ring-white focus:border-white appearance-none"
+                className="text-white block w-full p-4 pl-2 ps-10 text-sm  rounded-lg bg-black  placeholder-gray-500 focus:ring-white focus:border-white appearance-none"
                 placeholder="https://example.xyz.com"
                 required
               />
@@ -78,7 +78,7 @@ export const UrlInput = () => {
                     setAwaiting(false);
                   }}
                   type="submit"
-                  className="text-white absolute end-2.5 bottom-2.5 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 bg-black border border-gray-700 hover:border-gray-200 hover:text-blue-100">
+                  className=" ease-in-out duration-500 text-white absolute end-2.5 bottom-2.5 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 bg-black border border-gray-700 hover:border-gray-200 hover:text-blue-100">
                   Shorten URL
                 </button>
               )}
@@ -86,7 +86,7 @@ export const UrlInput = () => {
           </form>
         </div>
         {outputValue === "" ? null : (
-          <div className="border rounded-md mt-4">
+          <div className=" border border-zinc-700 rounded-md mt-8">
             <DisplayLink />
           </div>
         )}
@@ -100,7 +100,7 @@ const Spinner = () => {
     <div role="status">
       <svg
         aria-hidden="true"
-        className="w-8 h-8  animate-spin text-gray-600 fill-blue-600 absolute end-2.5 bottom-2.5 mr-4"
+        className="w-8 h-8 animate-spin text-gray-600 fill-blue-600 absolute end-2.5 bottom-2.5 mr-4"
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">

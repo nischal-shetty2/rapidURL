@@ -3,7 +3,7 @@ import { UrlInput } from "./compoents/UrlInput";
 
 export default function Home() {
   return (
-    <div className="bg-black">
+    <>
       <div className="sticky top-0">
         <Appbar />
       </div>
@@ -15,6 +15,6 @@ export default function Home() {
           <UrlInput />
         </div>
       </div>
-    </div>
+    </>
   );
 }
