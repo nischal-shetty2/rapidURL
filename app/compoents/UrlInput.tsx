@@ -8,8 +8,10 @@ export const UrlInput = () => {
   const [awaiting, setAwaiting] = useState<boolean>(false);
   const [error, seterror] = useState<boolean>(false);
   const [copied, setCopied] = useState<boolean>(false);
+  const [value, setValue] = useState("");
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
     setInputValue(e.target.value);
   };
 
@@ -57,6 +59,7 @@ export const UrlInput = () => {
                 onChange={handleInputChange}
                 type="search"
                 id="search"
+                value={value}
                 className="text-white block w-full p-4 pl-2 ps-10 text-sm  rounded-lg bg-black  placeholder-gray-500 focus:ring-white focus:border-white appearance-none"
                 placeholder="https://example.xyz.com"
                 required
@@ -74,6 +77,7 @@ export const UrlInput = () => {
                     } else {
                       seterror(false);
                       setOutputValue(shortenedUrl);
+                      setValue("");
                     }
                     setAwaiting(false);
                   }}
