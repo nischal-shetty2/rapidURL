@@ -32,7 +32,7 @@ export const UrlInput = () => {
           <a
             className=" mt-2 hover:text-blue-500 ease-in-out duration-700 text-slate-400"
             href={outputValue}>
-            {outputValue}
+            {outputValue.replace(/^https?:\/\//, "")}
           </a>
           <button
             onClick={copyToClipboard}
