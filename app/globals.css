@@ -36,3 +36,126 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px black inset !important;
 }
+
+/* Custom glow effects */
+.glow {
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+}
+
+.glow-text {
+  text-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
+}
+
+.glow-border {
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+.float-fast {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Glass morphism effects */
+.glass {
+  background: rgba(17, 25, 40, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(75, 85, 99, 0.2);
+}
+
+/* Custom background gradient */
+.bg-gradient-blue-purple {
+  background: linear-gradient(
+    135deg,
+    #1e3a8a 0%,
+    #4f46e5 25%,
+    #7e22ce 50%,
+    #be185d 75%,
+    #1e3a8a 100%
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Shine effect for buttons */
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  transform: rotate(30deg);
+  transition: transform 0.9s;
+}
+
+.shine:hover::after {
+  transform: rotate(30deg) translate(150%, -150%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
